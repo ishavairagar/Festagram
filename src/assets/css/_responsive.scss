@@ -1,0 +1,385 @@
+@media (min-width: 980px) and (max-width: 1024px) {
+  .welcome-card,
+  .login-card {
+    top: calc(50vh - 300px);
+    width: 75% !important;
+    overflow: hidden;
+    margin-bottom: 90px !important;
+  }
+  .registration-success {
+    margin-bottom: 100px !important;
+  }
+  .verification-card {
+    margin-bottom: 50px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .responsive-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (min-width: 500px) and (max-width: 1400px) {
+  .login-card .title {
+    text-transform: uppercase !important;
+    font-size: 15px;
+  }
+  @media (min-width: 500px) and (max-width: 1400px) {
+    .login-card .sub-title {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+/***
+For tablets and phones
+***/
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .welcome-card,
+  .login-card {
+    top: calc(40vh - 300px);
+    width: 100% !important;
+    overflow: hidden;
+    margin-bottom: 90px !important;
+  }
+  .verification-card {
+    margin-bottom: 100px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .welcome-card,
+  .login-card {
+    top: calc(50vh - 300px);
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 110px;
+  }
+  .verification-card {
+    margin-bottom: 100px !important;
+  }
+
+  .wrapper app-footer {
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    left: 0;
+    background: #222325;
+    color: whitesmoke;
+    border-top: 1px solid #d2d6de;
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    z-index: 820;
+  }
+  .toggeled-sidebar {
+    app-footer {
+      left: 260px !important;
+    }
+  }
+  .pinned-sidebar {
+    app-footer {
+      left: 260px !important;
+    }
+  }
+
+  .payment-fee {
+    text-align: left !important;
+  }
+  .wrapper nav.navbar {
+    .navbar-header{
+      width: 50% !important;
+      .navbar-brand{
+        display: flex;
+      }
+
+      span {
+        display: inline-block !important;
+      }
+    }
+    .brand-title {
+      color: #fff;
+      font-size: 14px !important;
+      margin: 14px 0px 0px 0px;
+      font-weight: 600;
+      white-space: normal !important;
+    }
+  }
+}
+
+@media (min-width: 734px) and (max-width: 736px) {
+  .welcome-card,
+  .login-card {
+    top: calc(90vh - 300px);
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 100px;
+  }
+  .registration-success {
+    margin-bottom: 100px !important;
+  }
+  .verification-card {
+    margin-bottom: 150px !important;
+  }
+
+  .wrapper app-footer {
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    left: 0;
+    background: #222325;
+    color: whitesmoke;
+    border-top: 1px solid #d2d6de;
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    z-index: 820;
+  }
+  .wrapper.toggeled-sidebar {
+    app-footer {
+      left: 260px !important;
+    }
+  }
+
+  .payment-fee {
+    text-align: left !important;
+  }
+
+  .payment-card {
+    margin-bottom: 100px !important;
+  }
+  .wrapper nav.navbar {
+    .navbar-header{
+      width: 50% !important;
+      .navbar-brand{
+        display: flex;
+      }
+
+      span {
+        display: inline-block !important;
+      }
+    }
+    .brand-title {
+      color: #fff;
+      font-size: 14px !important;
+      margin: 14px 0px 0px 0px;
+      font-weight: 600;
+      white-space: normal !important;
+    }
+  }
+}
+
+@media (min-width: 667px) and (max-width: 684px) {
+  .welcome-card,
+  .login-card {
+    top: calc(100vh - 300px);
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 90px;
+  }
+  .verification-card {
+    margin-bottom: 150px !important;
+  }
+
+  .wrapper app-footer {
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    left: 0;
+    background: #222325;
+    color: whitesmoke;
+    border-top: 1px solid #d2d6de;
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    z-index: 820;
+  }
+  .wrapper.toggeled-sidebar {
+    app-footer {
+      left: 260px !important;
+    }
+  }
+
+  .payment-fee {
+    text-align: left !important;
+  }
+
+  .payment-card {
+    margin-bottom: 100px !important;
+  }
+
+  .wrapper nav.navbar {
+    .navbar-header{
+      width: 50% !important;
+      .navbar-brand{
+        display: flex;
+      }
+
+      span {
+        display: inline-block !important;
+      }
+    }
+    .brand-title {
+      color: #fff;
+      font-size: 14px !important;
+      margin: 14px 0px 0px 0px;
+      font-weight: 600;
+      white-space: normal !important;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 666px) {
+  .welcome-card,
+  .login-card {
+    top: calc(50vh - 300px);
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 130px;
+  }
+
+  .table-application-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-admission-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #progressbar {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+
+    li {
+      list-style-type: none;
+      font-size: 10px;
+      width: 14%;
+      float: left;
+      position: relative;
+      span {
+        display: none !important;
+      }
+    }
+    li:before {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      font-size: 10px;
+      color: #ffffff;
+      background: lightgray;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      padding: 0px;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.58) !important;
+    }
+    li:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: lightgray;
+      position: absolute;
+      left: 58%;
+      top: 15px;
+      z-index: 0;
+    }
+  }
+  .registration-success {
+    margin-bottom: 130px !important;
+    .fs-title {
+      font-size: 24px;
+    }
+  }
+  .verification-card {
+    margin-bottom: 50px !important;
+  }
+
+  .wrapper app-footer {
+    display: block;
+    width: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    left: 0;
+    background: #222325;
+    color: whitesmoke;
+    border-top: 1px solid #d2d6de;
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    z-index: 820;
+  }
+  .wrapper.toggeled-sidebar {
+    app-footer {
+      // left: 260px !important;
+      display: none;
+    }
+  }
+  .verification-card {
+    margin-bottom: 150px !important;
+  }
+
+  .payment-fee {
+    text-align: left !important;
+  }
+
+  .payment-card {
+    margin-bottom: 150px !important;
+  }
+  .wrapper nav.navbar {
+    .navbar-header{
+      width: 50% !important;
+      .navbar-brand{
+        display: flex;
+      }
+
+      span {
+        display: inline-block !important;
+      }
+    }
+    .brand-title {
+      color: #fff;
+      font-size: 14px !important;
+      margin: 14px 0px 0px 0px;
+      font-weight: 600;
+      white-space: normal !important;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .welcome-card,
+  .login-card {
+    top: calc(50vh - 300px);
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 130px;
+  }
+  .verification-card {
+    margin-bottom: 150px !important;
+  }
+
+  .wrapper nav.navbar {
+    .navbar-header{
+      width: 30% !important;
+      span {
+        display: none !important;
+      }
+    }
+  }
+}
