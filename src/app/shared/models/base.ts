@@ -6,8 +6,8 @@ export class Base {
 
     constructor(){
         this.createdBy = 0;
-        this.createdOn = new Date;
-        this.modifiedOn = new Date;
+        this.createdOn = new Date();
+        this.modifiedOn = new Date();
         this.modifiedBy = 0 ;
 
     }
