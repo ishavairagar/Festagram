@@ -45,6 +45,8 @@ const routes: Routes = [
         loadChildren: () =>
           import('./teacher/teacher.module').then((m) => m.TeacherModule),
       },
+      
+
       // {
       //   path: 'reset-password',
       //   component:resetpasswordcomponent
@@ -55,6 +57,7 @@ const routes: Routes = [
       // },
     ],
   },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
 ];
 
 @NgModule({

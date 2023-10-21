@@ -1,0 +1,107 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "erp": "sadasf",
+      "firstName": "adsd",
+      "lastName": "sds",
+      "email": "sds@gmail.com",
+      "phone": "9078968756",
+      "password": "Pall#25",
+      "isActive": false
+    },
+    {
+      "id": 2,
+      "erp": "sadsad",
+      "firstName": "sadsd",
+      "lastName": "asds",
+      "email": "sadsd@gmail.com",
+      "phone": "9898998678",
+      "password": "sddfs",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "erp": "TI-D2102",
+      "firstName": "isha",
+      "lastName": "vairagar",
+      "email": "ishanv@gmail.com",
+      "role": "teacher",
+      "phone": "8976523456",
+      "password": "isha@12",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "erp": "T123",
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john.smith12@gmail.com",
+      "role": "teacher",
+      "phone": "2345678765",
+      "password": "john#123",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "erp": "ti_312",
+      "firstName": "isha",
+      "lastName": "haja",
+      "email": "ish@hm.ij",
+      "role": "teacher",
+      "phone": "4754567800",
+      "password": "is@12",
+      "isActive": false
+    },
+    {
+      "id": 6,
+      "erp": "triuhg",
+      "firstName": "uhgv",
+      "lastName": "mnb",
+      "email": "gh@gm.co",
+      "role": "teacher",
+      "phone": "3456789987",
+      "password": "isha",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "erp": "ti-d21",
+      "firstName": "Isha",
+      "lastName": "Vairagar",
+      "email": "isha@gmail.com",
+      "role": "teacher",
+      "phone": "0000000000",
+      "password": "isha",
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "erp": "5678",
+      "firstName": "ashu",
+      "lastName": "vairagar",
+      "email": "ashu@gmail.com",
+      "role": "teacher",
+      "phone": "4456789876",
+      "password": "ashu@12",
+      "isActive": true
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

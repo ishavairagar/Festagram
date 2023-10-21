@@ -39,9 +39,11 @@
             "styles": [
               "src/scss/styles.scss",
               "src/assets/css/style.scss",
-              "src/assets/css/_responsive.scss"
+              "src/assets/css/_responsive.scss",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [ 
+              "node_modules/bootstrap/dist/js/bootstrap.js",
             "src/assets/js/jquery-3.5.1.slim.min.js",
             "src/assets/js/popper.min.js",
             "src/assets/js/bootstrap.min.js"],

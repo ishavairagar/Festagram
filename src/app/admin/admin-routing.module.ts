@@ -14,6 +14,11 @@ const routes: Routes = [{ path: '', component: AdminComponent },
   path: 'teacher',
   loadChildren: () =>
     import('../teacher/teacher.module').then((m) => m.TeacherModule),
+},
+{
+  path: 'event',
+  loadChildren: () =>
+    import('../event/event.module').then((m) => m.EventModule),
 },];
 
 @NgModule({

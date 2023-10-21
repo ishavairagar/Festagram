@@ -20,7 +20,7 @@ var adminMenu = [
   },
   {
     name: 'Event',
-    url: '/base',
+    url: 'admin/event',
     iconComponent: { name: 'cil-puzzle' },
   },
   {
@@ -38,12 +38,12 @@ var teacherMenu=[
   },
   {
     name: 'Student',
-    url: 'teacher/student',
+    url: '/teacher/student',
     iconComponent: { name: 'cil-pencil' }
   },
   {
     name: 'Event',
-    url: '/base',
+    url: '/teacher/event',
     iconComponent: { name: 'cil-puzzle' },
   },
   {
@@ -62,10 +62,17 @@ var studentMenu=[
   },
   {
     name: 'Event',
-    url: '/base',
+    url: '/admin/event',
     iconComponent: { name: 'cil-puzzle' },
   }
 ];
+var eventMenu=[
+  {
+    name: 'Dashboard',
+    url: '/admin/event',
+    iconComponent: {name: 'cil-puzzle'},
+  }
+]
 export const navItems: INavData[] = teacherMenu;
 
 

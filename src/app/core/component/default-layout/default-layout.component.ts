@@ -18,17 +18,12 @@ export class DefaultLayoutComponent {
     },
     {
       name: 'Teacher',
-      url: 'admin/teacher',
+      url: 'admin/teacher/dashboard',
       iconComponent: { name: 'cil-user' }
     },
     {
-      name: 'Student',
-      url: 'admin/student',
-      iconComponent: { name: 'cil-pencil' }
-    },
-    {
       name: 'Event',
-      url: '/base',
+      url: 'admin/event',
       iconComponent: { name: 'cil-puzzle' },
     },
     {
@@ -61,19 +56,8 @@ export class DefaultLayoutComponent {
     },
   ];
   
-    
-   studentMenu=[
-    {
-      name: 'Dashboard',
-      url: '/admin/dashboard',
-      iconComponent: { name: 'cil-speedometer' },
-    },
-    {
-      name: 'Event',
-      url: '/base',
-      iconComponent: { name: 'cil-puzzle' },
-    }
-  ];
+
+  
 
   constructor(){
     debugger
@@ -82,8 +66,7 @@ export class DefaultLayoutComponent {
       this.navItems = this.adminMenu;
     } else if(role=='teacher'){
       this.navItems = this.teacherMenu;
-    }else{
-      this.navItems = this.studentMenu;
     }
+
   }
 }

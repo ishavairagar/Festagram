@@ -1,93 +1,101 @@
 <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-6">
             <div class="card p-4">
               <div class="card-body">
                 <form cForm id="loginForm" #loginForm="ngForm" autocomplete="off">
                   <h1>Login</h1>
                   <p class="text-medium-emphasis">Sign In to your account</p>
-                  <div class="row">
-                    <div class="col">
-                      <input 
-                      type="email" 
-                      class="form-control" 
-                      required
-                      id="inputEmail"
-                      #inputEmail="ngModel"
-                      [(ngModel)]="login.email"
-                      name="Email"
-                      [ngClass]="{
-                        'is-invalid':
-                        inputEmail.invalid &&
-                          (inputEmail.dirty ||
-                          inputEmail.touched 
-                            )
-                      }"
-                      placeholder="Enter email"
-                      [maxlength]="50">
-                      <div
-                            class="invalid-feedback"
-                            [ngStyle]="{
-                              display:
-                              inputEmail.invalid &&
-                                (inputEmail.dirty ||
-                                inputEmail.touched ||
-                                  loginForm.submitted)
-                                  ? 'block'
-                                  : 'none'
-                            }"
-                          >
-                            <div [hidden]="!inputEmail?.errors?.['required']">
-                              <span class="fa fa-exclamation-circle"></span> Email
-                              is required
-                            </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form
+                      novalidate
+                      autocomplete="off"
+                      (ngSubmit)="loginUser(loginForm)"
+                      #loginForm="ngForm"
+                    >
+                      <div class="form-group pt-2">
+                        <label class="required">Email</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          [(ngModel)]="login.email"
+                          [ngClass]="{'is-invalid': Email.invalid && (Email.dirty || Email.touched || loginForm.submitted) }"
+                          pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                          maxlength="50"
+                          name="Email"
+                          #Email="ngModel"
+                          placeholder="Email"
+                        />
+                        <div
+                          class="invalid-feedback"
+                          [ngStyle]="{display:Email.invalid &&
+                            (Email.dirty || Email.touched || loginForm.submitted) ? 'block': 'none'}"
+                        >
+                          <div [hidden]="!Email?.errors?.['required']">
+                            <span class="fa fa-exclamation-circle"></span> Email is
+                            required
                           </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col">
-                      <input 
-                      type="password" 
-                      class="form-control" 
-                      placeholder="Enter Password"
-                      required
-                      id="inputPassword"
-                      #inputPassword="ngModel"
-                      [(ngModel)]="login.password"
-                      name="Password"
-                      [ngClass]="{
-                        'is-invalid':
-                        inputPassword.invalid &&
-                          (inputPassword.dirty ||
-                          inputPassword.touched 
-                            )
-                      }"
-                      [maxlength]="15">
-                      <div
-                            class="invalid-feedback"
-                            [ngStyle]="{
-                              display:
-                              inputPassword.invalid &&
-                                (inputPassword.dirty ||
-                                inputPassword.touched ||
-                                  loginForm.submitted)
-                                  ? 'block'
-                                  : 'none'
-                            }"
-                          >
-                            <div [hidden]="!inputPassword?.errors?.['required']">
-                              <span class="fa fa-exclamation-circle"></span> Password
-                              is required
-                            </div>
+                          <div [hidden]="!Email?.errors?.['pattern']">
+                            Enter valid Email
                           </div>
-                    </div>
-                  </div>
-                  <div class="row mt-1">
-                    <div class="col float-right">
-                        <button class="btn btn-secondary float-md-end m-2" type="reset">Cancel</button>
-                        <button class="btn btn-primary float-md-end  m-2" type="submit" (click)="signIn(loginForm)">Login</button>
-                    </div>
+                        </div>
+                      </div>
+      
+                      <div class="form-group">
+                        <label class="required">Password</label>
+                        <!-- [pattern]="constants.PASSWORD_REGEXP" -->
+                        <input
+                          type="password"
+                          class="form-control"
+                          required
+                          [(ngModel)]="login.password"
+                          [ngClass]="{'is-invalid': Password.invalid && (Password.dirty || Password.touched || loginForm.submitted) }"
+                          name="Password"
+                          #Password="ngModel"
+                          placeholder="Password"
+                          [maxLength]="15"
+                          [minLength]="10"
+                        />
+                        <div
+                          class="invalid-feedback"
+                          [ngStyle]="{display:Password.invalid &&
+                            (Password.dirty || Password.touched || loginForm.submitted) ? 'block': 'none'}"
+                        >
+                          <div [hidden]="!Password?.errors?.['required']">
+                            <span class="fa fa-exclamation-circle"></span> Password is
+                            required
+                          </div>
+                          <div [hidden]="!Password?.errors?.['minLength']">
+                            Enter valid password
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        </div>
+                        <div
+                          class="col-6 col-sm-12 col-md-6 col-lg-6 col-xl-6 float-right"
+                        >
+                          <div class="form-group">
+                            <a
+                              routerLink="/forgot-password"
+                              class="color-blue float-right font-weight-bold"
+                              >Forgot password?</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group pt-2 mb-4">
+                        <button
+                          type="submit"
+                          class="btn btn-primary col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                        >
+                          Login
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </form>
             </div>

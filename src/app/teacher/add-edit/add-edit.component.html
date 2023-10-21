@@ -1,1 +1,246 @@
-<p>add-edit works!</p>
+<div class="row mb-2">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <!-- <h4
+        class="mb-0 float-left"
+        [innerHTML]="currentURL.includes('/edit')? 'Edit Teacher Info' : 'Add Teacher Info'"
+      ></h4> -->
+      <button class="btn btn-outline-lightning float-right" (click)="goBack()">
+        <i class="fa fa-angle-left mr-1"></i> Back
+      </button>
+    </div>
+  </div>
+  
+  <div class="row mb-3">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <form
+            autocomplete="off"
+            (ngSubmit)="!isUpdate ? submitTeacherDetails(teacherDetailsForm) : updateTeacherDetails(teacherDetailsForm)"
+            name="teacherDetailsForm"
+            #teacherDetailsForm="ngForm"
+          >
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                      <label class="required">ERP</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        required
+                        [(ngModel)]="teacherVM.erp"
+                        pattern="^\S*$"
+                        [ngClass]="{'is-invalid': erpField.invalid && (erpField.dirty || erpField.touched ||teacherDetailsForm.submitted)}"
+                        name="erpField"
+                        #erpField="ngModel"
+                        placeholder="ERP"
+                        [maxlength]="150"
+                      />
+                      <div
+                        class="invalid-feedback"
+                        [ngStyle]="{display:erpField.invalid &&
+                            (erpField.dirty || erpField.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                      >
+                        <div [hidden]="!erpField?.errors?.['required']">
+                          <span class="fa fa-exclamation-circle"></span> ERP is
+                          required
+                        </div>
+                        <div [hidden]="!erpField?.errors?.['pattern']">
+                          Enter valid ERP
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="form-group">
+                  <label class="required">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    [(ngModel)]="teacherVM.firstName"
+                    pattern="^[A-Za-z\/\s\.'-]+$"
+                    [ngClass]="{'is-invalid': FirstNameField.invalid && (FirstNameField.dirty || FirstNameField.touched ||teacherDetailsForm.submitted)}"
+                    name="FirstNameField"
+                    #FirstNameField="ngModel"
+                    placeholder="First Name"
+                    [maxlength]="150"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    [ngStyle]="{display:FirstNameField.invalid &&
+                        (FirstNameField.dirty || FirstNameField.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                  >
+                    <div [hidden]="!FirstNameField?.errors?.['required']">
+                      <span class="fa fa-exclamation-circle"></span> First Name is
+                      required
+                    </div>
+                    <div [hidden]="!FirstNameField?.errors?.['pattern']">
+                      Enter valid first name
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="form-group">
+                  <label class="required">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    [(ngModel)]="teacherVM.lastName"
+                    pattern="^[A-Za-z\/\s\.'-]+$"
+                    [ngClass]="{'is-invalid': Surname.invalid && (Surname.dirty || Surname.touched ||teacherDetailsForm.submitted)}"
+                    name="Surname"
+                    #Surname="ngModel"
+                    [maxlength]="150"
+                    placeholder="Last Name"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    [ngStyle]="{display:Surname.invalid &&
+                        (Surname.dirty || Surname.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                  >
+                    <div [hidden]="!Surname?.errors?.['required']">
+                      <span class="fa fa-exclamation-circle"></span> Last Name is
+                      required
+                    </div>
+                    <div [hidden]="!Surname?.errors?.['pattern']">
+                      Enter valid last name
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="form-group">
+                  <label class="required">Email</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="teacherVM.email"
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                    [ngClass]="{'is-invalid': EmailField.invalid && (EmailField.dirty || EmailField.touched ||teacherDetailsForm.submitted)}"
+                    name="EmailField"
+                    #EmailField="ngModel"
+                    placeholder="Email"
+                    [maxlength]="50"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    [ngStyle]="{display:EmailField.invalid &&
+                        (EmailField.dirty || EmailField.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                  >
+                    <div [hidden]="!EmailField?.errors?.['required']">
+                      <span class="fa fa-exclamation-circle"></span> Email is
+                      required
+                    </div>
+                    <div [hidden]="!EmailField?.errors?.['pattern']">
+                      Enter valid Email
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="form-group">
+                  <label class="required">Mobile Number</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="teacherVM.phone"
+                    pattern="^[(]{0,1}[0-9]{1}[)]{0,1}[-\s\.]{0,1}[0-9]{5}[-\s\.]{0,1}[0-9]{4}$"
+                    [ngClass]="{'is-invalid': Phone.invalid && (Phone.dirty || Phone.touched ||teacherDetailsForm.submitted)}"
+                    name="Phone"
+                    #Phone="ngModel"
+                    placeholder="Mobile Number"
+                    [maxlength]="10"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    [ngStyle]="{display:Phone.invalid &&
+                        (Phone.dirty || Phone.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                  >
+                    <div [hidden]="!Phone?.errors?.['required']">
+                      <span class="fa fa-exclamation-circle"></span> Mobile number
+                      is required
+                    </div>
+                    <div [hidden]="!Phone?.errors?.['pattern']">
+                      Enter valid mobile number.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="form-group">
+                  <label class="required">Password</label>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="teacherVM.password"
+                    [ngClass]="{'is-invalid': PasswordField.invalid && (PasswordField.dirty || PasswordField.touched ||teacherDetailsForm.submitted)}"
+                    name="PasswordField"
+                    #PasswordField="ngModel"
+                    placeholder="Password"
+                    [maxlength]="10"
+                  />
+                  <div
+                    class="invalid-feedback"
+                    [ngStyle]="{display:PasswordField.invalid &&
+                        (PasswordField.dirty || PasswordField.touched || teacherDetailsForm.submitted) ? 'block': 'none'}"
+                  >
+                    <div [hidden]="!PasswordField?.errors?.['required']">
+                      <span class="fa fa-exclamation-circle"></span> Password
+                      is required
+                    </div>
+                    <div [hidden]="!PasswordField?.errors?.['pattern']">
+                      Enter valid password.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mx-0">
+                  <div class="pb-4 pt-3 float-right">
+                    <button
+                      class="btn btn-primary mr-2"
+                      type="submit"
+                      *ngIf="!isUpdate"
+                    >
+                      Send Mail 
+                    </button>
+                    <button
+                      class="btn btn-primary mr-2"
+                      type="submit"
+                      *ngIf="isUpdate"
+                    >
+                      Update
+                    </button>
+                    <button
+                      class="btn btn-secondary"
+                      type="button"
+                      *ngIf="isUpdate"
+                      (click)="goBack()"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      class="btn btn-secondary"
+                      type="reset"
+                      *ngIf="!isUpdate"
+                      (click)="reset(teacherDetailsForm)"
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,1 +1,171 @@
-<p>dashboard works!</p>
+<div class="row mb-2">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <h4 class="float-left mb-0">Teacher Manager</h4>
+      <button
+        class="btn btn-primary float-right mb-0"
+        [routerLink]="['/admin/teacher/add']"
+      >
+        <i class="fa fa-plus" aria-hidden="true"></i> Add New Teacher
+      </button>
+    </div>
+  </div>
+  <!-- <div class="row mb-3">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <form
+                novalidate
+                autocomplete="off"
+                id="filterForm"
+                name="filterForm"
+                #filterForm="ngForm"
+                (ngSubmit)="getTeacherList()"
+              >
+                <div class="row">
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <label class="bold-font" for="Name">First Name</label>
+                    <input
+                      class="form-control"
+                      id="FirstName"
+                      name="FirstName"
+                      placeholder="First Name"
+                      type="text"
+                      [(ngModel)]="paginationVM.Filter.FirstName"
+                    />
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <label class="bold-font" for="Name">Last Name</label>
+                    <input
+                      class="form-control"
+                      id="LastName"
+                      name="LastName"
+                      placeholder="Last Name"
+                      type="text"
+                      [(ngModel)]="paginationVM.Filter.LastName"
+                    />
+                  </div>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <label class="bold-font" for="Name">Status</label>
+                    <select
+                      class="form-control"
+                      id="State"
+                      name="State"
+                      placeholder="State"
+                      type="text"
+                      [(ngModel)]="paginationVM.Filter.Status"
+                    >
+                      <option [ngValue]="true" selected>Active</option>
+                      <option [ngValue]="false">Inactive</option>
+                    </select>
+                  </div>
+                  <div
+                    class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 margin-top-30"
+                  >
+                    <button
+                      class="btn btn-secondary float-right"
+                      type="reset"
+                      (click)="resetSearch(filterForm)"
+                    >
+                      Reset
+                    </button>
+                    <button
+                      class="btn btn-primary float-right mr-2"
+                      type="submit"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="row mb-2">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table table-responsive">
+            <label for=""
+              >Teacher List
+            </label>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">ERP</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of teacherList">
+                  <td>{{item.erp}}</td>
+                  <td>{{item.firstName}}</td>
+                  <td>{{item.lastName}}</td>
+                  <td>{{item.email }}</td>
+                  <td>
+                    <a
+                      class="btn btn-sm btn-outline-lightning rounded-0 mr-2"
+                      title="Edit Teacher"
+                      (click)="editTeacher(item.id)"
+                    >
+                      <i class="fa fa-edit"></i>
+                    </a>
+                    <a
+                      class="btn btn-sm btn-outline-lightning rounded-0"
+                      title="Delete Teacher"
+                      (click)="deleteTeacher(activateTemplate, item)"
+                    >
+                      <i class="fa fa-trash-o"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="text-center" *ngIf="teacherList.length === 0">
+                  <td colspan="10">No teachers to display</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #activateTemplate>
+    <div class="modal-body">
+      <div class="row p-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+          Are you sure you want to delete
+          <strong class="color-blue"
+            >{{teacher.firstName}}&nbsp;{{teacher.lastName}}</strong
+          >?<br />
+        </div>
+      </div>
+      <div class="align-content-center row">
+        <div
+          class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 text-center break-all-word"
+        >
+          <button
+            class="btn btn-primary mr-2"
+            type="button"
+            (click)="confirmDeleteTeacher()"
+          >
+            YES
+          </button>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            (click)="modalRef.hide()"
+          >
+            NO
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>

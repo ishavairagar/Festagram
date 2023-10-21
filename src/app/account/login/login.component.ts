@@ -17,14 +17,14 @@ export class LoginComponent {
   ngOnInit(): void {
   }
 
-  signIn(loginForm:NgForm){
+  loginUser(loginForm:NgForm){
     debugger
     if(loginForm.valid){
-      if(this.login.email === 'admin@gmail.com' && this.login.password === 'Admin@123'){
+      if(this.login.email === 'admin123@gmail.com' && this.login.password === 'Admin@123'){
         sessionStorage.setItem('currentUser', 'admin');
         this.router.navigate(['/admin/dashboard']);
       }
     }
   }
-  
+
 }
